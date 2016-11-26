@@ -1,0 +1,28 @@
+p{
+    font-family: arial, sans-serif;
+    font-size: 80%;
+    text-indent: 10px  
+}
+
+body{
+     background-color: rgb(80, 128, 255);
+}
+
+h1{
+     font-family: arial;
+     color: green;
+}
+
+h1#section{
+     text-align: center;    
+     color: red;
+  
+}
+
+ol.mini-roman{
+     list-style-type:lower-roman;
+}	
+
+em{
+     color: orange;
+}

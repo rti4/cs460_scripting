@@ -1,0 +1,99 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<style>
+ol.alpha {list-style-type: lower-alpha}
+table.code { border-collapse: collapse
+}
+</style>
+</head><body><ol>
+<li> <ol class="alpha">
+     <li> XMLHttpRequest
+     </li><li> onreadystatechange
+     </li><li> XML
+     </li><li> DOM parser
+     </li><li> Expat parser
+     </li><li> SimpleXML parser
+     </li></ol>
+<p>
+</p></li><li> <ol class="alpha">
+     <li> Code for DOM parser
+     <xmp>
+$questionsDoc = new DOMDocument();
+$questionsDoc-&gt;preserveWhiteSpace = false;   // not necessary for your solution
+$questionsDoc-&gt;load("questions.xml");
+$questions = $questionsDoc-&gt;documentElement
+$question = $questions-&gt;getElementsByTagName('question');
+$question2 = $question-&gt;item(1);
+$options = $questions-&gt;getElementsByTagName('option');
+$option3 = $options-&gt;item(2);
+     </xmp>
+     </li><li> Code for SimpleXML parser
+<xmp>
+$root = simplexml_load_file("questions.xml")
+$option3 = $root-&gt;question[1]-&gt;option[2]
+</xmp>
+   </li></ol>
+</li><li> <xmp>
+&lt;!ELEMENT questions (question*) &gt;
+&lt;!ELEMENT question (q, option+, answer)&gt;
+</xmp>
+</li><li> <xmp>
+&lt;xs:element name="question"&gt;
+  &lt;xs:complexType&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="q" type="qType" /&gt;
+      &lt;xs:element name="option" type="optionType" minOccurs="4" maxOccurs="4" /&gt;
+      &lt;xs:element name="option" type="answerType" /&gt; 
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</xmp>
+</li><li> <xmp>
+&lt;xs:simpleType name="answerType"&gt;
+  &lt;xs:restriction base="xs:positiveInteger"&gt;
+    &lt;xs:minInclusive value="1"&gt;
+    &lt;xs:maxInclusive value="4"&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</xmp>
+</li><li> <xmp>
+taxrate_re = /\.\d{1,3}/
+taxrate_valid = taxrate_re.test(document.forms.tax.taxrate.value)
+</xmp>
+</li><li> <xmp>
+with(document.forms.tax) {
+  salestax_amt = parseInt(amount.value) * parseFloat(taxrate.value)
+  salestax.value = salestax_amt.toString()
+  if (salestax_amt &gt; 50) 
+    salestax.style.color = 'red'
+}
+</xmp>
+</li><li> <xmp>
+&lt;html&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h3&gt;Sales Tax Computation on &lt;?php echo $_POST["amount"]; ?&gt;&lt;/h3&gt;&lt;/center&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;ul&gt;
+&lt;li&gt; Sales Tax Rate: &lt;? echo $_POST["taxrate"]; ?&gt; &lt;/li&gt;
+&lt;li&gt; Sales Tax Amount: &lt;? echo $_POST["taxrate"] * $_POST["amount"] ?&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</xmp>
+</li><li> <ol class="alpha">
+     <li> <xmp>
+mysql_connect("schools.com", "cs460", "correct");
+mysql_select_db("questions");
+</xmp>
+     </li><li> <xmp>
+$result = mysql_query("SELECT QuestionText, Answer FROM Questions 
+                       WHERE Course = 'CS302'");
+</xmp>
+     </li><li> <xmp>
+$result = mysql_query("SELECT Questions.QuestionText, Options.OptionText
+                       FROM Questions, Options
+		       WHERE Questions.Course = 'CS302' and 
+		             Questions.Answser = Options.OptionId");
+</xmp>
+</li></ol></li></ol></body></html>

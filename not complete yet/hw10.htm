@@ -1,0 +1,150 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body><ol>
+<li> (<b>30 points</b>) This problem is a repeat of problem 3 from hw 9 except that you should
+use the PHP DOM parser to solve the problem. Write a php script named 
+<tt>avgprice.php</tt> 
+that reads an xml
+file structured like the <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw10/cdcatalog.xml">cdcatalog</a> and produces
+an ascii report similar to the one in class where you have the headings
+Artist and Avg. Price and for each artist you print the artist's name in
+the format "Lastname, Firstname" and then the average price of that artist's
+cds. The output should be in alphabetical order by lastname. If two artists
+have the same last name it does not matter which one appears first in the
+output. You will note that this problem is a bit more complicated than the
+one presented in class because the cdcatalog is organized by cd rather than
+by artist. I suggest you keep two associative arrays of artists, one for
+the number of cds encountered thus far and one for the total value of the
+cds. Once you have finished processing the cd's you can sort one of the
+associative arrays by lastname, then iterate through the array,
+calculate the average price for each author, and print each author and the
+average price for that author's cds.
+<p>
+A second problem that you may note is that the artists' names are not
+divided into a first and last name for you.
+I suggest that you use a Perl-style regular
+expression to separate the first and last names. You may assume that the
+first name is a single first name with no whitespace. If there is only one
+name, like Smiley or Dr.Hook, then you should assume that it is a firstname.
+You should suppress the comma if the artist has no last name (i.e., only the
+firstname should be printed). If an artist has only a first name, it is okay
+to use the first name for sorting purposes. 
+</p><p>
+</p></li><li> (<b>40 points</b>) Check out this sample <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw10/account.html">account management form</a>.
+Your task is to write a php script named <tt>account.php</tt>
+that implements the three operations shown
+on this form:
+<p>
+</p><ol>
+<li> Login: The php script should verify that the entered user id exists, 
+     then verify the password, and finally generate an html page with
+     the appropriate response. The possible responses are:
+     <p>
+     </p><ul>
+     <li> "Welcome xxxx!": <tt>xxxx</tt> should be the name associated with the
+          user id. For example, "Welcome Brad Vander Zanden!".
+     </li><li> "Invalid userid: xxxx": <tt>xxxx</tt> should be the invalid user id
+          entered by the user.
+     </li><li> "Invalid password"
+     </li></ul>
+<p>
+</p></li><li> Add Account: The script should verify that the user id does not already
+     exist in the account database and then add the user id, name, and 
+     password to the database. The script should generate an html page
+     with the following possible messages:
+     <p>
+     </p><ul>
+     <li> Account xxxx created--Welcome xxxx!: The first <tt>xxxx</tt> should
+          be replaced with the user id and the second <tt>xxxx</tt> should
+	  be replaced with the user's name.
+     <p>
+     </p></li><li> xxxx already exists--please select another user id: The <tt>xxxx</tt>
+          should be replaced with the duplicate user id.
+     </li></ul>
+<p>
+</p></li><li> Delete Account: The script should verify that the user id exists and
+     then delete the entry from the account database. The script should generate
+     an html page with the following possible messages:
+     <p>
+     </p><ul> 
+     <li> xxxx successfully deleted: <tt>xxxx</tt> should be the <i>name</i>
+          of the person, not the user id.
+     <p>
+     </p></li><li> xxxx not found: <tt>xxxx</tt> should be the invalid user id
+     </li></ul>
+</li></ol>
+<p>
+You should use an xml file to store the account information associated with
+each user. You need to design the xml file. It is okay for the name to be
+kept as a single name (i.e., you do not need to break it into a last name and
+a first name).
+</p><p> 
+Your script must have the following elements:
+</p><ul>
+<li> It must PHP's DOM parser to load and handle the account file.
+</li><li> You must use an xpath object to query for the element object that
+     contains the entered userid
+</li><li> If you added or deleted an account then you must write out the updated 
+     account file at the end of the program. The w3schools web-site has 
+     information on how to open/close a file and write a string to a file.
+</li></ul>
+<p>
+</p></li><li> (<b>30 points</b>) Suppose you are given the following tables in an SQL 
+     database. Each is 
+     shown with 1 or 2 lines of sample data but you should assume that the
+     tables are arbitrarily long:
+<p>
+</p><center>
+<b>Projects</b>
+<table border="1">
+<tbody><tr><th>Id</th><th>Name</th><th>Cost</th><th>Office_Id</th></tr>
+<tr><td>123</td><td>Claxton Renovation</td><td>105000</td><td>37996</td></tr>
+</tbody></table>
+<p>
+<b>Offices</b>
+<table border="1">
+<tbody><tr><th>Id</th><th>City</th><th>State</th><th>Street_Address</th><th>Phone_Number</th></tr>
+<tr><td>37996</td><td>Knoxville</td><td>TN</td><td>1119 Volunteer Blvd</td><td>865-974-1000</td></tr>
+</tbody></table>
+</p><p>
+<b>EmployeeProjects</b>
+<table border="1">
+<tbody><tr><th>Employee_Id</th><th>Project_Id</th></tr>
+<tr><td>783</td><td>123</td></tr>
+<tr><td>783</td><td>875</td></tr>
+</tbody></table>
+</p><p>
+<b>EmployeeInfo</b>
+<table border="1">
+<tbody><tr><th>Id</th><th>Name</th><th>Email</th><th>Area_Code</th><th>Phone</th><th>Office</th><th>salary</th></tr>
+<tr><td>783</td><td>Hercules</td><td>herc@buildit.com</td><td>423</td><td>789-1393</td><td>Mt. Olympus</td><td>25000</td></tr>
+</tbody></table>
+</p></center>
+<p>
+Write the following SQL queries (do not worry about upper/lower case):
+</p><p>
+</p><ol> 
+<li> Print the Offices table
+</li><li> Print the names of all employees in the 423 area code
+</li><li> Print the names and salaries of all employees in the 423 area code who
+     make more than $50000.
+</li><li> Insert a new entry into the Projects table with the following
+     information:
+     <p>
+     </p><ul>
+     <li> id: 457
+     </li><li> name: Parthenon 
+     </li><li> cost: 1000000
+     </li><li> office id: 8596
+     </li></ul>
+<p>
+</p></li><li> Delete all entries from the EmployeeProjects table that have a
+    project id of 123.
+</li><li> Update the salary of employee 783 to 30000 in the EmployeeInfo table.
+</li><li> Print the name of each project and the street address of the office
+     that serves it (the office id is the id of the office that serves it).
+</li><li> Print the names, email addresses, and phone numbers of all employees
+     that are working on project 123.
+</li></ol>
+</li></ol>
+     
+</body></html>

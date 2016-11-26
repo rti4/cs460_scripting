@@ -1,0 +1,204 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body><h3> Helpful Hints </h3>
+<ol> 
+<p>
+</p><li> <tt>xmllint</tt> provides an alternative way to a browser
+	for checking whether or not your stylesheets represent
+	well-formed XML code. It is a good idea to run your stylesheets
+	through xmllint before trying to display your xml files because
+	it's easy to make simple mistakes in your stylesheet, such as
+	forgetting to close tags. You can also use xmllint to check your
+	DTD file. The format of the xmllint command is:
+	<pre>	xmllint -dtdvalid DTDfile xmlfile
+	   <b>or</b>
+        xmllint xmlfile
+	</pre>
+	xmllint is installed on the CS department's linux workstations.
+<p>
+</p></li><li> If you want to play around with xmllint on example xml and
+	DTD files you can go to ~bvz/cs594/hw/hw6/ and copy the files
+	family.xml and family.dtd to your directory. 
+</li></ol>
+<p>
+</p><hr>
+<h3> Problems </h3>
+<p>
+</p><ol>
+<li> (<b>10 points for each question</b>) Consider the <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/cdcatalog.xml">CD catalog</a> xml file and
+        the <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/cdcatalog.xsl.html">CD catalog XSL stylesheet</a> that we used 
+        as an illustration in
+	class. Modify the XSL file so that it accomplishes the 
+	following presentation tasks. 
+	<p>
+	</p><ol>
+	<li> Prints a table of all CD's whose artist's country is the USA.
+		The table should have headings for title, artist, company,
+		price, and year, in that order. 
+		<p>
+		</p><ul>
+		<li> You can view sample output
+		<a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/artistusa.tiff">here</a> (the bottom part of the
+		table is cut off). 
+		</li><li> Put your answer in a file named <tt>artistusa.xsl</tt>.
+		</li></ul>
+	<p>
+	</p></li><li> (<b>Each part worth 5 points</b>) Prints a table of all CD's.
+		The table should have headings for title, artist, company,
+		price, and year, in that order.
+		Use a background color
+		of purple for all years prior to 1970, green for all
+		years in the 1980s, and red for all other years (70s and
+		90s and beyond). Color the entire entry, not just the year.
+		You can view sample output
+		<a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/artistforeach.tiff">here</a> (the bottom part of the
+		table is cut off). 
+		<p>
+		Do this exercise twice according to the following specification:
+		</p><p>
+		</p><ul>
+		<li> Use only template and apply-template commands. Use the
+		     priority attribute so that you specify an overall
+		     template for coloring entries and then specific
+		     templates for the years prior to 1970 and the 80s.
+		     Put your answer in a file named <tt>artisttemplate.xsl</tt>.
+		<p>
+		</p></li><li> Use the for-each construct to select the CDs
+			and the choose construct to select the
+			appropriate color.
+		     Put your answer in a file named <tt>artistforeach.xsl</tt>.
+		</li></ul>
+		<p>
+		<b>Hint: If you do not know how to write predicates 
+		in XPath then check the XPath notes. They provide enough
+		information to complete this problem.</b>
+	</p><p>
+	</p></li><li> Sorts the cds by price in descending order and prints out the
+		cds in a table with the headings title, artist, and price.
+		You do not have to print the other fields. 
+		<p>
+		</p><ul> 
+		<li> You can view sample 
+		output <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/sortprice.tiff">here</a> (the bottom part of the
+		table is cut off).
+		</li><li> Put your answer in a file named <tt>sortprice.xsl</tt>.
+		</li></ul>
+	<p>
+	</p></li><li> Sorts the cds by year in decending order as the primary key
+		and by artist in ascending order as the secondary key.
+		Number the results and print the year, artist, and title
+		in the format:
+		<pre>		year: artist - title
+		</pre>
+		For example:
+		<pre>		1. 1988: Bonnie Tyler - Hide your heart
+		2. 1982: Dolly Parton - Greatest Hits
+		3. 1982: Mickey Mouse - Oh Orlando
+		</pre>
+		<ul>
+		<li> You can view sample output	
+		     <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/sortyearartist.tiff">here</a>.
+		</li><li> Put your answer in a file named <tt>sortyearartist.xsl</tt>.
+		</li><li> <b>Hint:</b> If you want the numbers to appear in the
+		     correct order, you need to put the following statement
+		     <i>after</i> your sort statements:
+		     <xmp> 
+		     &lt;xsl:number value="position()" format="1"/&gt;
+		     </xmp>
+		     If you put the number statement before the sort statements
+		     then the numbers assigned to the elements will correspond
+		     to the elements' original order, not their sorted order.
+		</li></ul>
+	 <p>
+         </p></li><li> Modify the XSL file so that ordered lists are used for the
+	      artist element only if there is more than one artist. If there
+	      is only one artist, then it should print out as a normal, single
+	      entry. 
+	      <p>
+	      </p><ul>
+	      <li> You can view sample output <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/artistlist.tiff">here</a>
+	      (the bottom part of the table is cut off).
+	      </li><li> Put your answer in a file named <tt>artistlist.xsl</tt>.
+	      </li></ul>
+</li></ol>
+<p>
+</p></li><li> (<b>10 points</b>) Complete the following template so that it prints multiple artists in the
+    <tt>cdcatalog</tt> as a comma separated list. For example:
+    <pre>Mickey Mouse , Donald Duck , Minnie Mouse
+    </pre>
+    <ul>
+    <li> Note that it is okay for there to be a space between the end of a word
+    and the comma. 
+    </li><li> Here is the template you should complete:
+    <xmp>
+&lt;xsl:template match="cd"&gt;
+   your code here
+&lt;/xsl:template&gt; 
+    </xmp>
+    </li><li> Put your solution in a file named <tt>answers.txt</tt>.
+    </li></ul>
+<p>
+</p></li><li> (<b>15 points</b>) Now that you have had some practice with XSL files it is time to create
+     your own XSL file from scratch. You are going to format a 
+     <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/bank.xml">bank</a> XML file that
+     consists of product offerings from banks. The banks offer two products:
+     CDs and mortgages. You are going to produce a listing of banks with
+     the following characteristics:
+     <p>
+     </p><ol> 
+     <li> It is going to start with a centered heading reading "Bank Products".
+     </li><li> It is then going to have a list of banks, separated by horizontal
+          lines.
+     </li><li> Each bank will have an unordered list of products with the first
+          product being the bank's CDs and the second product being the
+	  bank's mortgages.
+     </li><li> The product names should be displayed in blue.
+     </li><li> The CD product offering should be shown as an ordered list, with
+          the CDs shown in decreasing order by rate. 
+     </li><li> The mortgage product offering should be shown as an ordered list, with
+          the mortgages shown in increasing order by rate.
+     </li><li> Each CD and mortgage should be shown with the format:
+          <pre>name: rate% -- length
+          </pre>
+     </li></ol>
+     <p>
+     </p><ul>
+     <li> A visual representation of the sample bank xml file can be found
+          <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/bank.jpg">here</a>.
+     </li><li> Put your solution in a file named <tt>bank.xsl</tt>
+     </li></ul>
+<p> 
+</p></li><li> (<b>10 points</b>) The XML design of the bank file has one flaw. Can you find it and suggest
+    how it might be corrected? 
+    <p>
+    </p><ul> 
+    <li> Add your answer to a file named <tt>answers.txt</tt>.
+    </li><li> <b>Hint</b>: What if a script wanted to sort
+         the CDs or mortgages by a different element than rate. 
+         Might a script have a problem with any of the elements?
+    </li></ul>
+<p>
+</p></li><li> (<b>15 points</b>) Design a DTD file for the following XML file:
+  	<xmp>
+	&lt;catalog&gt;
+	  &lt;artist&gt;* 
+	    &lt;retired&gt; parsed character data
+	    &lt;country&gt; parsed character data
+	    &lt;name&gt;
+	      &lt;first&gt; parsed character data
+	      &lt;last&gt; parsed character data
+	    &lt;/name&gt;
+	    &lt;cd&gt;*
+	      &lt;title&gt; parsed character data
+	      &lt;company&gt; parsed character data
+	      &lt;price&gt; parsed character data
+	      &lt;yearReleased&gt; parsed character data
+	      &lt;dateAcquired&gt; parsed character data
+	</xmp>
+	<ul>
+        <li> <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw6/cd2catalog.html">cdcatalog</a> 
+             contains an example XML file that satisfies this DTD.
+	</li><li> Put your answer in a file named <tt>cdcatalog.dtd</tt>.
+	</li></ul>
+</li></ol>
+
+</body></html>

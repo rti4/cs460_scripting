@@ -1,0 +1,103 @@
+<ol>
+<li> <b>30 points</b>: Create a form called <tt>addr</tt> that has a single text element labeled 
+     <tt>street address</tt>. The user is expected to enter a street address of
+     the form "number street (dr|rd|ln|tr)". Typically you would use a menu for 
+     the street suffix but I want to give you practice with using regular expressions.
+     When the user edits the street address you should call a validation function that
+     checks whether the street address has the correct form. A street may have more than
+     one name, such as in "2425 pin oak ln". If the street address is correct then
+     you should pop up an alert box that lists the street number, street, and suffix
+     on separate lines. Each of the lines should be appropriately labeled. If the street
+     address is incorrect then the text box's background color should be changed to yellow
+     and the text should be changed to red. An alert box should pop up with an error message
+     explaining that a street address should have the form "number street (dr|rd|ln|tr)".
+<p>
+<li> <b>30 points</b>: Create a form called <tt>print</tt> that has two radio buttons labeled with the
+     <i>suffixes</i> "All" and
+     "From". The "From" option should be followed by a text box, the label "To", and a
+     second text box. The two text boxes should be disabled if "All" is selected. When
+     "From" is selected, both text boxes should be enabled, the "From" text box should be
+     given the focus, and the text in the "From" box should be selected. Whenever the user
+     edits the "From" text box, the value in the "From" text box should be
+     placed as the current value
+     in the "To" text box if either 1) there is no value in the "To" text box, or
+     2) the value in the "To" text box is less than the value in the "From" text box.
+     Whenever the user edits the "To" text box the validation function should check the
+     value of the "From" text box and either 1) place the value of the "To" textbox in the
+     "From" textbox if the "From" textbox is empty, or 2) make the background color of the
+     "To" box yellow and assign to the "title" property a string
+     that reads "the to value must be greater than or
+     equal to the from value". If the user hovers the mouse cursor over the "To" textbox a box
+     will pop up with this string displayed in it. When the user places a correct value in
+     the "To" textbox the "title" property should be assigned the null string.
+     When the "All" option is selected the text boxes should be
+     disabled but their values should not be cleared.
+<p>
+<li> <b>40 points</b>: You are going to create a simplified version of the TV gameshow "Deal or No Deal" using
+     Javascript. You are to create an initial web page that provides a set of instructions
+     and a button after the instructions that reads "Start Game". You should come up with
+     a coherent set of instructions.
+     There should then be a horizontal rule and the following form:
+     <p>
+     <ol>
+     <li> A centered, readonly textbox with the label "Offer" and a maxsize of 7 digits. The
+          offer box should be initially blank.
+     <p>
+     <li> Underneath the offer box should be a 
+          2x5 table with 10 buttons, labeled from 1 to 10. The buttons 
+          represent suitcases with hidden monetary values. The 10 possible values for
+	  each suitcase are $.01, $1, $5, $10, 100, $1000, $10000, $100000, $500000, and
+	  $1000000. The values will be randomly assigned to the 10 suitcases. You should feel
+	  free to devise your own algorithm for doing this, but one acceptable way is to
+	  use the <tt>Math.random</tt> function, which returns a floating point
+	  number between 0 and 1. Generate 10 random numbers and place them in an array.
+	  For each random number determine its numeric position in sorted order and assign
+	  it the corresponding value from the money array. For example suppose the random
+	  number .506058 is the third generated random number and it is the 6th largest value 
+	  overall. Then button 3 would be assigned the value $1,000 because $1000 is the 6th
+	  largest value in the money array.
+      <p>
+      <li> Next to the 2x5 table should be a vertical 1x10 table with 10 checkboxes, labeled with
+           the amounts from $.01 to $1000000. 
+	   <p>
+      <li> Two centered buttons, side-by-side, labeled "Deal" and "No Deal". 
+      </ol>
+      <p>
+      Here is how the game works:
+      <p>
+      <ol>
+      <li> The user presses the "Start Game" button and the gameboard is initialized by
+           assigning values to buttons and unchecking and enabling all checkboxes (the user
+	   may have already played the game and is starting a new one).
+      <p>
+      <li> The user selects a button. This is their "suitcase" and they may either hold it
+           to the end of the game, in which case they receive whatever monetary value the
+	   suitcase holds, or they may sell the suitcase to the banker. Once selected,
+	   the button should
+	   be disabled, the text should be displayed in silver, and the button should be
+	   colored blue. The offer box should remain blank.
+      <p>
+      <li> The user selects one button at a time and when the button is selected its value
+           is revealed by replacing the button's number with the value of the button. The
+	   button is disabled and its background color should be made yellow. The checkbox
+	   associated with that amount is checked and disabled. You should select the checkbox
+	   by calling its <tt>click</tt> method. It is true that the user 
+	   can also check the checkboxes and that's a drawback of this user interface. 
+	   You can try setting the
+	   "readonly" property but Firefox inconveniently ignores this property.
+      <p>
+      <li> After each button is selected the banker makes an offer in the offer text box.
+           The offer should be computed as 90% of the expected value of the remaining unopened
+	   suitcases, because that is what happens on Deal or No Deal--the banker always
+	   lowballs the offer until there are only a couple of suitcases left. The offer should
+	   be an integer.
+      <p>
+      <li> The user selects either the "Deal" or "No Deal" button. If the user selects
+           the "Deal" button the game ends and the value in the user's suitcase is
+	   revealed. If the user selects the "No Deal" button the game continues. If the
+	   user has opened all the suitcases the game automatically ends and the value in
+	   the user's suitcase is revealed. No matter how the game ends, an alert box should
+	   pop up telling the user how much the user won. If the user selects the deal, the
+	   user wins whatever the offer amount is, not what is in the suitcase.
+      </ol>
+</ol>

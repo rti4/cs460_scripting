@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE payroll [
+    <!ELEMENT payroll (employee*)>
+	<!ELEMENT employee (name,spouse?,child*,tax-status,ssn,salary,date-of-birth,(manager|staff))>
+	<!ELEMENT name (first,middle?,last)>
+	<!ELEMENT first (#PCDATA)>
+	<!ELEMENT middle (#PCDATA)>
+	<!ELEMENT last (#PCDATA)>
+	<!ELEMENT spouse (first,middle?,last)>
+	<!ELEMENT child (first,middle,last)>
+	<!ELEMENT tax-status ((married | single | headOfHousehold | separated))>
+	<!ELEMENT ssn (#PCDATA)>
+	<!ELEMENT salary (#PCDATA)>
+	<!ELEMENT date-of-birth (#PCDATA)>	
+	<!ELEMENT manager (#PCDATA)>	
+	<!ELEMENT group (#PCDATA)>
+	<!ELEMENT yrsAtRank (#PCDATA)>
+	<!ELEMENT staff (skill)>
+	<!ELEMENT skill (#PCDATA+)>	
+]>
+<!--
+<payroll>
+  <employee>*
+    <name>
+      <first>: string of up to 15 alphabetical characters, spaces, or hyphens (-).
+               string must start with an upper-case letter
+      <middle>?: upper case letter
+      <last>: string of up to 15 alphabetical characters, spaces, or hyphens (-).
+               string must start with an upper-case letter
+    <spouse>? -- name is same type as employee name
+      <first>
+      <middle>?
+      <last>
+    <child>* -- name is same type as employee name
+      <first>
+      <middle>?
+      <last>
+    <tax-status> married | single | headOfHousehold | separated
+    <ssn>: A nine digit number of the form ddd-dd-dddd (e.g, 865-57-2934)
+        ssn attribute: name=type; values=(assigned | original); default="original"
+    <salary>: A 9 digit number of the form ddddddd.dd with a minimum value of
+              0 and a maximum value of 2000000, inclusive.
+    <date-of-birth>: A date type
+    <manager> | <staff>
+      <manager>
+        attribute for manager: name=title; value=string; required
+        <group>: string
+        <yrsAtRank>: an inclusive integer between 0 and 50
+      <staff>
+        <skill>+: up to 5 skills, each being a string
+payroll contains an example XML file that satisfies this specification.
+-->

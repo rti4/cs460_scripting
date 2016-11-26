@@ -1,0 +1,7 @@
+a-radio
+b-hidden field
+c-menu
+d-checkbox
+e-textbox
+f-password box
+g-submit

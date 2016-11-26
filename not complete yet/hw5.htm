@@ -1,0 +1,96 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body><h3> Helpful Hints </h3>
+<ol> 
+<li> The instructions for submitting your solutions can be found at the end
+of this document.
+</li></ol>
+<p>
+</p><hr>
+<h3> Problems </h3>
+<p>
+</p><ol>
+<li> (<b>40 points</b>) The following XPath queries should be performed on an XML file with
+     the following structure:
+  	<xmp>
+	&lt;catalog&gt;
+	  &lt;artist&gt;* 
+	    &lt;retired&gt; 
+	    &lt;country&gt; 
+	    &lt;name&gt;
+	      &lt;first&gt; 
+	      &lt;last&gt; 
+	    &lt;/name&gt;
+	    &lt;cd&gt;*
+	      &lt;title&gt; 
+	      &lt;company&gt; 
+	      &lt;price&gt; 
+	      &lt;yearReleased&gt; 
+	      &lt;dateAcquired&gt; 
+	</xmp>
+     <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw5/cd2catalog.html">cdcatalog</a> 
+     contains an example XML file that satisfies this XML structure.
+<p>
+      </p><ol>
+      <li> Write an XPath expression that locates all price elements in the
+	   XML file with a value of 23.
+      </li><li> Write an XPath expression that locates the third artist element
+           (use the W3C standard, not the Internet Explorer standard)
+      </li><li> Write an XPath expression that locates all name elements, no
+	   matter where they appear in the XML file.
+      </li><li> Write an XPath expression that locates the last cd element in
+	   each artist element.
+      </li><li> Write an XPath expression that assumes you start at a <b>cd</b>
+	   node and that locates name elements whose last name is
+	   <tt>Mouse</tt>.
+      </li></ol>  
+<p>
+</p></li><li> <b>(60 points)</b> Design an XML file to structure the data for the following human
+	resource application for Brad's Musical Works. 
+	The file will be a list of employee records.
+	Each employee record should contain the employee's name, spouse's
+	name, and any children's names (first, middle,
+	and last in all cases). Each record should also contain the
+	employee's social security number, salary, and date of birth (month,
+	day, year). Finally the record should contain the employee's
+	job title, which can be either manager or staff. If the
+	employee's job title is manager, then there should be additional
+	information that contains the number of years the employee has
+	been a manager and the name of the group that the manager heads.
+	If the employee's job title is staff, then there should be
+	additional information about the types of skills the employee
+	possesses (e.g., clerical, musical, bookkeeping, sales). An
+	employee may have one or more skills.
+	<p>
+	Your solution should show me the hierarchy of element tags you will
+	use. Place an asterisk (*), plus (+), or question mark (?) next to
+	an element if it can occur 0 or more times, 1 or more times, or 0/1
+	times respectively. If you require one of two elements, you can
+	write <tt>&lt;element1&gt; | &lt;element2&gt;</tt> and use the
+	following syntax: 
+	<xmp>
+	&lt;element1&gt; | &lt;element2&gt;
+	  &lt;element1&gt;
+	    ...
+	  &lt;element2&gt;
+	    ...
+	</xmp>
+	</p><p>
+	<b>Hints</b>: 
+	</p><ol>
+	<li> Only use attributes if you want points deducted.
+	</li><li> Use the format shown in the previous problem to write your
+		XML specification. 
+	</li></ol>
+<p>
+</p></li></ol>
+<hr>
+<h3>What to Submit</h3>
+<p>
+You should use the same submission script you have used thus far this 
+semester and you should name your files as follows:
+</p><p>
+Question 1: xpath.txt (just a plain-text file with the answers)<br>
+Question 2: employee.txt (just a plain-text file with the answers)
+
+
+</p></body></html>

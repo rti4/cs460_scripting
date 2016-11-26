@@ -1,0 +1,144 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body>This homework will give you practice with html forms. It starts with some
+warm-up exercises and then has a bigger problem at the end that makes you
+combine your skills with the different form elements. A couple general
+notes:
+<p>
+</p><ol>
+<li> Please create a separate html file for each of the four homework
+	questions.
+</li><li> Please use the <tt>label</tt> element to label all widgets. 
+     I do not care whether you use the explicit or implicit type of label.
+</li><li> Please select appropriate values for the name/value attributes of your
+     widgets. The TAs will check that they are there but will not be grading
+     them unless you choose completely inappropriate values.
+</li></ol>
+<p>
+</p><hr>
+<ol>
+<li> Create a menu with the following characteristics:
+     <ol>
+     <li> It has the elements "United States", "Albania", "Britain", "Canada",
+          "China", "France", "Germany", "India", "Italy", and "Mexico"
+     </li><li> It displays 6 elements at a time
+     </li><li> It allows multiple selections
+     </li><li> China is the initial, default selection
+     </li></ol>
+<p>
+</p></li><li> Redo the above menu so that it has the categories "North America",
+     "Europe", and "Asia". Put the countries in the obvious places (India should
+     be placed in "Asia").
+<p>
+</p></li><li> Create a html file that builds the form shown below:
+     <p>
+     </p><center><img src="hw2_files/radio.jpg"></center>
+     <p>
+     You will need to use a table to do the visual formatting. The structural
+     characteristics of the form are as follows:
+     </p><p>
+     </p><ol>
+     <li> 1 is the default selection
+     </li><li> The textbox widget and the <tt>other</tt> radio button should appear
+          together.
+     </li><li> The submit button uses the <tt>get</tt> method for posting. You can
+          use "foo.php" as the name of your script, even though it will not
+	  work.
+     </li></ol>
+     <p>
+     The visual formatting characteristics are as follows:
+     </p><p>
+     </p><ol>
+     <li> The radio buttons are left-aligned with a <tt>2em</tt> left padding
+          in front of each radio button
+     </li><li> The radio buttons should be laid out in a 2x3 grid.
+     </li><li> There are two non-breaking spaces between the <tt>other</tt> radio
+          button and its textbox
+     </li><li> The <tt>Number of Dependents</tt> label will also appear in the 
+          table but should not have a <tt>2em</tt> left padding (hint: if you
+	  use style sheets to create the <tt>2em</tt> left padding then you
+	  may need to use a class attribute to override the left padding for
+	  the <tt>Number of Dependents</tt> column.
+     </li></ol>
+<p>
+</p></li><li> Create a html file that builds the hotel form shown below:
+     <p>
+     </p><center><img src="hw2_files/hotel.jpg"></center>
+     <br clear="all">
+     Choose appropriate values for the names and value attributes of each
+     of the widgets.
+     The form has the following structural characteristics:
+     <p>
+     </p><ol>
+     <li> There are three groupings for "Hotel Finder", "Room Information",
+          and "Special Needs". Each of these groupings should be labeled as
+	  shown in the figure.
+     </li><li> Country menu: It should contain three countries: "United States", 
+          "Mexico", and "Canada".
+     </li><li> City: Its size should be 10 characters with a maximum length of 15
+          characters
+     </li><li> State: It should contain four states, "Kentucky", "Ohio", "Tennessee",
+           and "Wyoming"
+     </li><li> Check-in Date: 
+          <p>
+	  </p><ul> 
+	  <li> The default value should be "mm/dd/yyyy". 
+	  </li><li> The size and maximum length should both be 10 characters
+	  </li></ul>
+	  <p>
+     </p></li><li> Check-out Date: Same as Check-in Date
+     </li><li> Number of People: "1" should be the default selection
+     </li><li> Amenities: Theres should be no default selection
+     </li><li> Room Type: "Double" should be the default selection
+     </li><li> Special Needs: Use a text area that is 5 rows and 50 characters wide.
+     </li></ol>
+     <p>
+     The form has the following visual formatting characteristics:
+     </p><p>
+     </p><ol>
+     <li> Labels: Use the <tt>label</tt> element for all labels.
+     </li><li> Hotel Finder: Use a table to format the widgets and labels
+          <ul>
+          <li> "Country"/"City" labels should be left-aligned
+	  </li><li> "Check-in Date"/"Check-Out Date"/"Number of People" labels
+               should be left-aligned.
+	  </li><li> The text widgets for "Check-In Date" and "Check-Out Date" should be
+               below their labels.
+          </li></ul>
+     </li><li> Room Information: Use a table to format the widgets and labels
+     	  and make the width of the table be 400 pixels.
+          <ul>
+	  <li> The "Amenities" column should get 60% of the width and the
+	       "Room Type" column should get 40% of the width of the table.
+          </li><li> The checkboxes for "Amenities" should be centered vertically with 
+                respect to the radio buttons and checkbox for "Room Type".
+          </li><li> The "Smoking" checkbox should have 15 pixels of vertical separation
+               from the radio buttons above it.
+	  </li></ul>
+	  <p>
+	  <b>An important thing to note about this table is that your browser
+	  	may appear to assign much more space to the room type than 40%
+		of the table. If you set the border attribute of the table to
+		1 as a debugging aid, then you will see what has happened.
+		The table is the right width and the right amount of space has
+		been allocated to its two columns. However, your browser may
+		make the form's width equal the browser window's width. Since
+		no border is being placed around the table, but a border is
+		being placed around the fieldset element, the viewer gets the
+		impression that the browser has allocated much more space to
+		room type than it really has.</b>
+		</p><p>
+     </p></li><li> Special Needs: No special formatting instructions.
+    </li></ol>
+    <p>
+    Finally the form has the following tab order:
+    </p><p>
+    </p><ol>
+    <li> Country
+    </li><li> City
+    </li><li> Check-in Date
+    </li><li> Check-out Date
+    </li><li> Special Needs
+    </li></ol>
+    Do not worry about the tab order for the radio button or checkbox 
+    groups.
+</li></ol></body></html>

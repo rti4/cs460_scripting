@@ -1,0 +1,124 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<style>
+ol.alpha {list-style-type: lower-alpha}
+table.code { border-collapse: collapse
+}
+</style>
+</head><body><ol>
+<li> <b>20 points</b>: These exercises will give you experience with the prompt and alert functions, 
+     and Java's string functions. Put your answers to this question in a ascii file
+     named <b>answers.txt</b>.
+     <p>
+     </p><ol class="alpha">
+     <li> Write a Javascript statement that prompts the user for a street address. You should
+           tell the user that the address should have the format "number street suffix", such
+	   as "1678 Cardiff Rd.".
+     </li><li> Write a Javascript statement that checks whether or not the street address starts with
+           a number. Pop up an alert box that either displays the street number or else a
+	   warning message that the street address must begin with a number.
+     </li><li> Write a Javascript statement that separates the street address into its three components
+           and stores the three components in an array (assume the street address has been
+	   entered correctly for this problem).
+     </li><li> Write a Javascript statement that repeatedly prompts the user for a street address if
+           either the user hits "cancel" or does not start the street address with a number.
+     </li></ol>
+<p>
+</p></li><li> <b>20 points</b>: Write a javascript html page named <b>median.html</b>
+     that prompts the user for a comma-separated list of numbers and
+     then prints their median value via an alert box. The numbers may be either
+     floats or integers and there should be no spaces in the list. You may assume
+     that the user correctly inputs the numbers. 
+     <p>
+     You should write a function to compute
+     the median. The function should take an array of numbers, sort them, and then extract the
+     median as the middle element of the array. For convenience, simply divide the size of the
+     array by 2 and print the element at that position. <b>You may need to use
+     parseInt to convert a float to an int because Javascript does not perform
+     integer division. For example 3/2 produces 1.5, not 1. </b>
+</p><p>
+</p></li><li> <b>20 points</b>: Write a javascript named <b>phone.html</b> 
+     that prompts the user for a phone number and verifies that the phone
+     number is in the right format. The format of the phone number should be <tt>xxx-xxx-xxxx</tt>.
+     You should use javascript's string methods (e.g., <tt>substring</tt>,
+<tt>charAt</tt>, <tt>indexOf</tt>) to verify that the phone number has
+     been entered correctly. You may <b>not</b> use the string's <tt>split</tt> method
+     and you may <b>not</b> use Javascript's regular expression mechanism. I know
+     these methods would result in simpler code but I want you to get practice with
+     these other methods.
+     <p>
+     If the phone number has been correctly entered, then create an html document with an
+     unordered list that lists the area code, exchange, and number. For example, 614-486-3153
+     would get printed as:
+     </p><p>
+     </p><ul>
+     <li> Area Code: 614
+     </li><li> Exchange: 486
+     </li><li> Number: 3153
+     </li></ul>
+     <p>
+     If the number is not correctly formatted, pop up a prompt box that tells the user that
+     the number is incorrectly formatted and to try again. Keep iterating until the user enters
+     an appropriately formatted phone number.
+</p><p>
+</p></li><li> <b>20 points</b>: Write a javascript named <b>print_names.html</b>
+     that prompts the user for a list of names (you may assume that the number
+     is a legitimate integer). After the user has finished
+     inputting the names the script will produce a sorted list of names in an ordered, html
+     list. The script should perform the following tasks:
+     <p>
+     </p><ol>
+     <li> Prompt the user for the number of names to be entered
+     </li><li> Prompt the user for a series of names. Each name should be entered separately.
+     </li><li> Sort the names.
+     </li><li> Print the names using an html ordered list.
+     </li></ol>
+     <p>
+     The top of the page should start with
+     the following instructions for the user:
+     </p><p>
+     </p><blockquote>
+     You will be prompted for a number of names to enter and then prompted for each name.
+     Once you have entered all the names the names will be printed out alphabetically in 
+     a numbered list.
+     </blockquote>
+     You should have a horizontal rule between the instructions and the list that gets printed
+     out. Initially the prompt box may show up on top of the instructions. That's okay. Once we
+     start using forms you will be able to add a "start" button to the page so that the alert
+     box does not pop up until the user has finished reading the instructions.
+<p>
+</p></li><li> <b>20 points</b>: The following exercise will give you practice with writing and creating objects. Put your
+     answers in your <b>answers.txt</b> file. 
+     <p>
+     </p><ol class="alpha">
+     <li> Write the javascript statements to create an untyped object and add to it a property called
+          'color' with the value 'red' and a property called 'left' with a value of 30.
+     <p>
+     </p></li><li> Write a Javascript function that creates a Rectangle object. The function should take
+          four parameters--the rectangle's left, top, width, and height--and assign them to 
+	  properties named <tt>left, top, width</tt>, and <tt>height</tt>. 
+     <p>
+     </p></li><li> Write a statement that creates a new Rectangle object with a left of 50, a top of 100,
+          a width of 20, and a height of 30.
+     <p>
+     </p></li><li> Write a series of Javascript statements that pop up an alert box that prints the properties of the rectangle
+          in a neat list, with one property per line. The alert box might look something like:
+	  <pre>	  left: 50
+	  top: 100
+	  width: 20
+	  height: 30
+	  </pre>
+	  You should use a <tt>for..in</tt> loop to extract and print the properties of the rectangle.
+     <p>
+     </p></li><li> Write a function named <tt>SetProperty</tt> for a Rectangle 
+          that will take a property name and a value and set the Rectangle's property name to
+          that value. 
+     <p>
+     </p></li><li> Assign <tt>SetProperty</tt> to the <tt>set</tt> property of the Rectangle object you
+          created in question "c".
+     <p>
+     </p></li><li> Call the <tt>set</tt> property, passing it the property 'color' and the value 'red'.
+     </li></ol>
+</li></ol>
+</body></html>

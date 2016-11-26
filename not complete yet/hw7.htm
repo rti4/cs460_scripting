@@ -1,0 +1,104 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body>This homework is designed to give you practice creating DTD and Schema
+files. 
+<p>
+</p><hr>
+<h3> Helpful Hints </h3>
+<ol> 
+<li> <a href="http://www.xml.dvint.com/docs/SchemaDataTypesQR-2.pdf">Here</a>
+	is a quick reference to XML schema data types and facets.
+<p>
+</p></li><li> <tt>xmllint</tt> provides an alternative way to a browser
+	for checking whether or not the DTDs
+	and Schemas that you develop for this assignment work. The format
+	of the command is:
+	<pre>	xmllint -dtdvalid DTDfile xmlfile
+	   <b>or</b>
+	xmllint -schema Schemafile xmlfile
+	</pre>
+	xmllint is installed on the CS department's linux workstations.
+<p>
+</p></li><li> If you want to play around with xmllint on example xml, schema, and
+	DTD files you can go to ~bvz/cs594/labs/ and copy the files
+	family.xml, family.dtd, and family.xsd to your directory. The
+	family.xml file is set up to work with a schema. You will need
+	to remove the schema declarations from the file to make it work
+	with a DTD.
+</li></ol>
+<p>
+</p><hr>
+<h3> Problems </h3>
+<p>
+</p><ol>
+<li> (<b>30 points</b>) Design a Schema file named <tt>cdcatalog.xsd</tt>
+     for the following XML specification:
+  	<xmp>
+	&lt;catalog&gt;
+	  &lt;artist&gt;* 
+	    &lt;retired&gt;: boolean
+	    &lt;country&gt;: string
+	    &lt;name&gt;
+	      &lt;first&gt;: string
+	      &lt;last&gt;: string
+	    &lt;/name&gt;
+	    &lt;cd&gt;*
+	      &lt;title&gt;: string
+	      &lt;company&gt;: string
+	      &lt;price&gt;: decimal number with up to 4 total digits and up to 2
+	               decimal digits (i.e., dd.dd). Example numbers might be
+		       5.2, 10.90, 3.31, .97, 0.97, 3, 3., etc. The minimum
+		       value is .01 and the maximum value is 99.99, which you
+		       can specify as being between 0 and 100, exclusive.
+	      &lt;yearReleased&gt;: An inclusive integer between 1900 and 2006
+	      &lt;dateAcquired&gt;: A date in the form mm/dd/yy
+	</xmp>
+     <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw7/cd2catalog.html">cdcatalog</a> 
+     contains an example XML file that satisfies this schema.
+<p>
+</p></li><li> Consider the following XML specification:
+<xmp>
+&lt;payroll&gt;
+  &lt;employee&gt;*
+    &lt;name&gt;
+      &lt;first&gt;: string of up to 15 alphabetical characters, spaces, or hyphens (-).
+               string must start with an upper-case letter
+      &lt;middle&gt;?: upper case letter
+      &lt;last&gt;: string of up to 15 alphabetical characters, spaces, or hyphens (-).
+               string must start with an upper-case letter
+    &lt;spouse&gt;? -- name is same type as employee name
+      &lt;first&gt;
+      &lt;middle&gt;?
+      &lt;last&gt;
+    &lt;child&gt;* -- name is same type as employee name
+      &lt;first&gt;
+      &lt;middle&gt;?
+      &lt;last&gt;
+    &lt;tax-status&gt; married | single | headOfHousehold | separated
+    &lt;ssn&gt;: A nine digit number of the form ddd-dd-dddd (e.g, 865-57-2934)
+        ssn attribute: name=type; values=(assigned | original); default="original"
+    &lt;salary&gt;: A 9 digit number of the form ddddddd.dd with a minimum value of
+              0 and a maximum value of 2000000, inclusive.
+    &lt;date-of-birth&gt;: A date type
+    &lt;manager&gt; | &lt;staff&gt;
+      &lt;manager&gt;
+        attribute for manager: name=title; value=string; required
+        &lt;group&gt;: string
+        &lt;yrsAtRank&gt;: an inclusive integer between 0 and 50
+      &lt;staff&gt;
+        &lt;skill&gt;+: up to 5 skills, each being a string
+</xmp>
+<a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw7/payroll.html">payroll</a>
+contains an example XML file that satisfies this specification.
+<p>
+</p><ol style="list-style-type: lower-alpha;">
+  <li> (<b>30 points</b>) Design a DTD file named <tt>employee.dtd</tt> for the 
+       above XML file. Use character data for all the
+       simple elements (elements with data content as opposed to sub-elements)
+       and do not worry about trying to limit skills to 5 or fewer. Instead 
+       require there to be at least one skill.
+  <p>
+  </p></li><li> (<b>40 points</b>) Design a schema file named <tt>employee.xsd</tt> for 
+       the above XML file.
+</li></ol>
+</li></ol>
+</body></html>

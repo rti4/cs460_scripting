@@ -1,0 +1,213 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body><ol>
+<li> Write a Perl file named <tt>exp.perl</tt> that contains a 
+     function that computes the value of e<sup>x</sup> by using the
+     formula:
+     <pre>     e<sup>x</sup> = 1 + (x/1!) + (x<sup>2</sup>/2!) + (x<sup>3</sup>/3!) + ...
+     </pre>
+     The function should take <tt>x</tt> and the number of terms to use in the
+     computation. If <tt>n</tt> is the number of terms then the last term used
+     in the computation should be <tt>x<sup>n</sup>/n!</tt>. The function's
+     signature should be:
+     <pre>     e(x, n)
+     </pre>
+     The file should take <tt>x</tt> and <tt>n</tt> as command line arguments and
+     print the result. For example:
+     <pre>     bvz% perl exp.perl 1 10
+     2.71828180114638
+     </pre>
+<p>
+</p></li><li> Write a Perl function named <tt>reverse_array</tt>
+     that takes a <i>reference</i> to an array and returns a new array with
+     the elements reversed. Requirements for the problem are
+     as follows:
+     <p>
+     </p><ul>
+     <li> Put the function in a file named <tt>reverse.perl</tt>.
+     </li><li> Use the command line arguments as the elements of the array to be reversed.
+          You can simply pass a reference to the command line array 
+          to <tt>reverse_array</tt>. 
+     </li><li> You may <b>not</b> use Perl's reverse function. 
+     </li><li> After the function returns print the reversed array as a comma delimited list
+          of elements.
+     </li><li> You must use the join function in conjunction with print to produce the
+          comma delimited list.
+     </li><li> <b>Hint</b>: You can reverse an array by reading the elements of the
+          array in order and then pushing them onto the front of the new array
+     </li></ul>
+     Here is a sample output:
+     <pre>     UNIX&gt; perl reverse.perl 1 10 20
+     20, 10, 1
+     </pre>
+<p>
+</p></li><li> This problem is designed to give you further practice with arrays and references.
+     On the command line you will be given arguments separated by /'s. For example:
+     <pre>     perl array.perl 1 10 / 20 40 / 80 100 110
+     </pre>
+     Your program is going to be named <tt>array.perl</tt> and it will
+     create arrays out of the elements between each pair of /'s 
+     and then print the arrays in reverse order. Each array's contents should be 
+     comma-delimited. For example:
+     <pre>     perl array.perl 1 10 / 20 40 / 80 100 110
+     80, 100, 110
+     20, 40
+     1, 10
+     </pre>
+     To solve this problem I want you to create an array of arrays. In order to do so
+     you will need to create an anonymous array for each new array and assign its reference
+     to the "master" array. After processing the command line you will iterate through
+     this master array in reverse order and print the contents of each of the arrays.
+<p>
+</p></li><li> Write regular expressions to perform each of the following tasks (assume that in each
+     case you are checking against a string):
+     <p>
+     </p><ul>
+     <li> Check that a person entered either 'm' or 'f' for a gender field
+     </li><li> Check that a zip code is between 00000 and 99999
+     </li><li> Check that a date is in the form <tt>mm-dd-yyyy</tt> with the month, day,
+          and year all being integers and the year starting with either the prefix
+	  19 or 20. The month and day can be either one or two digits.
+     </li><li> Check that a phone number has one of the following three forms (I'm
+          giving you concrete examples, but I want you to be able to handle any 10
+	  digit phone number):
+	  <ul>
+	  <li> 8651929693
+	  </li><li> (865) 192-2963 or (865)192-2963
+	  </li><li> 865-192-2963
+	  </li></ul>
+     </li><li> Check that an email address is of the form <tt>name@path1.path2...path<sub>n</sub></tt> where 
+          <tt>name</tt> and the <tt>paths</tt> can be 
+          any combination of letters, numbers, and underscores (_). There can be any
+	  number of '.' separated paths, although there must be at least one,
+	  and the name must be separated from the path
+	  by an '@' sign (<b>warning: any strings you use to test your
+	  pattern should either use single quotes like 'bvz@cs.utk.edu' or
+	  else escape the @ character, like "bvz\@cs.utk.edu". If you do
+	  not do heed this warning, then Perl will treat @cs as an interpolated
+	  array and will think the string is really "bvz.utk.edu".</b>)
+	  </li></ul>
+       
+<p>
+</p></li><li> Write a Perl function named <tt>credit</tt>
+	that takes a string with a credit card number as input and
+	returns the 4 groups of 4 numbers in an array. You should assume
+	that the number comes in a string and that the groups of 4 numbers
+	may have spaces or dashes (-) between them. It is not necessary however
+	for a group of 4 numbers to have a separator, nor is it necessary to use
+	the same separator in the group. For example
+	'1234 5689-39694858' is valid. If the string is invalid
+	your function should print an error message along with the offending
+	string. Place your function in a file named <tt>credit-card.perl</tt>. The
+	script should pass the command line argument to credit and then print out
+	each of the four groups on a separate line. You may assume that you
+	always have the correct number of command-line arguments. 
+	Here is a possible execution of <tt>credit-card.perl</tt>:
+	<pre>	perl credit-card.perl "6868-3868 54545868"
+	6868
+	3868
+	5454
+	5868
+	</pre>
+<p>
+</p></li><li> Write a Perl script named <tt>long.perl</tt>
+     that takes a latitudinal or longitudinal string of the form
+     "DDD.MM.SS.S" and prints it in the form:
+     <pre>     DDD   degrees
+      MM   minutes
+      SS.S seconds
+     </pre>
+     Notice that "degrees", "minutes", and "seconds" are left-aligned. The numbers should
+     be right-aligned. For example, the string "050.03.22.3" should be printed as:
+     <pre>      50   degrees
+       3   minutes
+      22.3 seconds
+     </pre> 
+     It is permissable
+     for the string to omit minutes, seconds, or fractional seconds, in which case the
+     value should default to 0. For example, the strings "050", "050.02", "050.02",
+     and "050.02.16" are all valid. You do not need to write a function to implement
+     this script.
+<p></p>
+</li><li> Write a Perl program called <tt>stock.perl</tt>
+     that reads stock transactions from STDIN and prints
+     out two reports: 1) a list of all stocks in which there is a non-zero holding
+     after all transactions are accounted for and 2) a list of all stocks
+     for which there have been sales and the amount of profit or loss for each
+     sales transaction for such a stock. The stocks in each
+     report should be printed in sorted order by ticker symbol and sales should be
+     reported in ascending order by date.
+     <p>
+     The name of the transaction file will be provided on the command
+     line. Each stock transaction will have
+     the following format with fields separated by commas:
+     </p><pre>     ticker symbol, stock name, number of shares, price per share, date
+     </pre>
+     For example:
+     <pre>     msft, Microsoft, 200, 30.37, 4/10/02005
+     ibm, Intl Bus. Machines, 200, 88.51, 5/22/2006
+     msft, Microsoft, -100, 25.23, 6/6/2006
+     </pre>
+     A negative number of shares indicates that the transaction is a sell transaction.
+     You may <i>not</i> assume that transactions are sorted
+     by ascending date. When a sell transaction is read the profit or loss should be
+     calculated using a first-in, first-out technique. That means that shares from
+     the oldest buy transaction should be used first, then, if that buy transaction
+     is exhausted, the next oldest, and so forth. You may assume that there will always
+     be enough shares to cover the sell transaction. Sample output for the above
+     set of transactions would look as follows:
+     <pre>     Stock Holdings
+
+     ibm  Intl Bus. Machines          200
+     msft Microsoft                   100
+
+     Stock Sales
+
+     msft Microsoft
+         06/06/06   100   25.23    (514.00)
+     </pre>
+     You can find a longer set of sample transactions in 
+     <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw3/data1">data1</a> and the output for this set of
+     transactions <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw3/stock_output">here</a>.
+     <p>
+     The format of the lines in the report should be as follows:
+     </p><p>
+     </p><ol> 
+     <li> Stock Holdings
+          <ul> <li> stock ticker: 4 characters, left justified
+	       </li><li> stock name: 25 characters, left justified, truncated if
+	             necessary (use slicing to truncate)
+	       </li><li> shares held: 5 digits, right justified
+	  </li></ul>
+     </li><li> Stock Sales: The first line should print the stock ticker symbol
+          left justified and with any number of characters, followed by a
+	  space and the stock name, with as many characters as make up the
+	  name. The lines showing each sale should be formatted as follows:
+	  <ul>
+	  <li> 4 spaces of indentation
+	  </li><li> The date in mm/dd/yy format
+	  </li><li> A space and 5 digits for the shares sold
+	  </li><li> A space and 6 digits for the share price in the form
+	       dddd.dd.
+	  </li><li> A space and 8 digits for the profit/loss in the form
+	       dddddd.dd. Losses should be in parentheses.
+	  </li></ul>
+	  All numbers should be right justified.
+      </li></ol>
+      Here are some hints and further problem specifications:
+      <p>
+      </p><ol>
+      <li> You may assume that the data is correct (i.e., has already been type-checked)
+      </li><li> For each company save two lists, one for sales and one for purchases. Once
+           your program has read all the transactions, sort both the sales and purchase
+	   lists based on dates and then performing your profit/loss computations.
+      </li><li> A convenient trick for converting dates to a sortable number is to use the
+           formula:
+	   <pre>	   sortable_date = 366 * year + 31 * month + day
+	   </pre>
+	   This formula could be used in the anonymous function handed to sort in order
+	   to convert a date to a sortable_date. Remember, efficiency is not a big deal so
+	   it is ok to repeatedly convert a date to a sortable date.
+      </li></ol>
+</li></ol>
+     
+</body></html>

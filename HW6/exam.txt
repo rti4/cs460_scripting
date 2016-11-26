@@ -1,0 +1,34 @@
+<exam>
+	<instruct><rule></rule></instruct>
+	
+	<word_bank>
+		<word>	
+	</word_bank>
+
+	<essay> <essay/>
+	<Q_A>
+		<essay> </essay>
+	</Q_A>
+	
+	<essay> <essay/>
+	
+	<Q_A>
+		<essay> <essay/>
+		<answer> </answer>
+	<Q_A>
+	
+	<essay> <essay/>
+	<x_mark>
+		<essay> </essay>
+		<code> </code>
+	
+	</x_mark>
+	
+	<essay> <essay/>
+	<Q_output_A>
+		<essay> </essay>
+		<output> </output>
+		<essay> </essay>
+	</Q_output_A>
+	
+</exam>

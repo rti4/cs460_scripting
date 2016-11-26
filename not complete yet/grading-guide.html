@@ -1,0 +1,54 @@
+<html>
+<head>
+<style>
+ol.alpha {list-style-type: lower-alpha}
+</style>
+</head>
+<ol>
+<li> (<b>25 points-5 points for each item</b>) Initial Reservation Page
+     <p>
+     <ul> 
+     <li> text field for airport code or city
+     <li> pickup date has menus for month and day
+     <li> drop-off date has menus for month and day
+     <li> menu or radio buttons for choosing the rental class
+     <li> check boxes for equipment options
+     </ul>
+     <p>
+<li> (<b>15 points</b>) Session Variables: The values of the reservation items are either stored
+     using PHP's session variables or in one or more cookies. If cookies are
+     used then the cookies are deleted when the "book reservation" button/link
+     is pressed.
+     <p>
+<li> (<b>50 points</b>) Confirmation Page 
+     <p>
+     <ul>
+     <li> (<b>5 points</b>) echoes all the information entered on the reservation page
+     <li> (<b>5 points</b>) somehow displays error information if any of the error checks fail
+     <li> has two buttons/links for "edit reservation" and "book reservation"
+          <p>
+	  <ol class="alpha">
+	  <li> (<b>5 points</b>) book reservation link brings up receipt page
+	  <li> (<b>10 points</b>) edit reservation link brings up reservation page with information
+	       filled in
+	  </ol>
+     <p>
+     <li> error checks
+     <p>
+          <ol class="alpha">
+	  <li> (<b>5 points</b>) Only the required parameters are present (airport code/city,
+	       pickup month and day, drop-off month and day, rental class, and
+	       equipment options)
+	  <li> (<b>5 points</b>) Drop-off date is after the pickup date
+	  <li> (<b>10 points</b>) Legal values for all fields: The legal values for months is 
+	       one of Jan, Feb, ..., Dec and the legal values for days is
+	       an integer from 1-31. Do not worry about matching
+	       days to months (e.g., February should have only 28 days).
+	  <li> (<b>5 points</b>) airport codes/city information has all special html characters
+	       replaced with their corresponding entities (e.g., < is replaced
+	       with &lt;).
+          </ol>
+     </ul>
+     <p>
+<li> (<b>10 points</b>) Receipt Page: Prints all the reservation information in a nice manner
+</ol>

@@ -1,0 +1,76 @@
+td.three_q{
+     width: 75%;
+     text-align: left;
+}
+
+td.one_20th{
+     width: 5%;
+     text-align: left;
+}
+
+td.tenth{
+     width: 10%;
+     text-align: left;
+}
+
+td.tenth_right{
+     width: 10%;
+     text-align: right;
+}
+
+td#b_blue{
+     font-weight: bold;
+     color: blue;
+}
+
+td.center{
+     text-align: center;
+
+}
+
+
+
+table{
+     border-style: solid;
+     border-color: black;
+     border-width: 1px;
+     border-collapse: collapse;     
+}
+
+td{
+     border-style: solid;
+     border-color: black;
+     border-width: 1px;
+         
+}
+
+td#content{
+     width: 350;
+     text-align: left;
+     
+}
+
+tr{
+     border-style: solid;
+     border-color: black;
+     border-width: 1px;
+}
+
+tr.heading{
+     background-color: red;
+     border-style: solid;
+     font-weight: bold;
+     border-width: 1px;
+}
+
+tr.ending{
+     background-color: #d0d0d0;
+     border-style: solid;
+     font-weight: bold;
+     border-width: 1px;
+}
+
+td#price{
+     font-weight: normal;
+     text-align: right;
+}

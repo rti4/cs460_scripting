@@ -1,0 +1,192 @@
+body{
+     background-image:url('paper3.gif');
+     color: #000000;
+     text-align: center;
+}
+
+a:link { color: #000099; text-decoration: underline;}
+a:visited { color: #aaaaaa; text-decoration: underline;}
+a:active { color: #aaaa00; text-decoration: line;}
+
+hr{
+     color: gray;
+     background-color: gray;
+     height: 4;
+     width: 100%;
+     border: 0px;
+	 
+	 noshade:noshade;
+}
+
+hr.heading{
+	padding: 10px;
+     width: 400px;
+     margin-left: auto;
+	 margin-right:auto;
+	 margin-top: 5px;
+	 margin-bottom: 5px;
+}
+
+div.main{ 
+     text-align:center;
+}
+
+div.menu{
+     width: 90;
+     text-align: left;
+     font-weight: bold;
+     float: left;          
+     
+}
+
+div.heading{
+     
+     font-size: 24px;
+     color: #0000AA;
+     text-align: center;
+    
+     /*background-color: red;    */
+     
+}
+
+div.content{
+     /*background-color: blue;*/
+     width: 550px;
+     margin: auto;
+}
+
+div.sub-heading{
+     font-size: 18px;
+     color: #990000;
+     font-weight: bold;
+}
+
+div.subsubheading{
+     font-size: 16px;
+     color: #990099;
+     font-weight: bold;
+}
+
+p.content_top{
+     color: red;
+     text-align: left;
+     font-weight: bold;
+}
+
+p{
+     text-align: left;
+     
+}
+
+div.bold{
+	font-weight: bold;
+	text-align: left;
+	
+}
+
+div.pos_left{
+     text-align: left;
+
+}
+
+div.menu_heading{
+     text-align: center;
+     font-size: 24px;
+     font-weight: bold;
+    
+}
+
+span.bold{
+	font-weight: bold;
+}
+
+span.red{ 
+	color: red;
+}
+p.bold_yellow{
+	font-weight: bold;
+	background-color: yellow;
+}
+	
+div.bold_yellow{
+	font-weight: bold;
+	background-color: yellow;
+    text-align: left;
+	
+}
+
+img{
+	border: 0;
+}
+/*
+table.content{
+     text-align:center;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+
+
+
+font#red{
+     color: red;     
+}
+
+
+td{
+
+     border-style: solid;
+     border-color: white;
+     border-width: 0px;
+}
+
+p.plus2b{
+     font-size: 24px;
+     font-weight: bold;
+}
+
+td.center{
+     text-align: center;
+     border-style: solid;
+     border-color: white;
+     border-width: 0px;
+}
+
+
+
+
+td#content{
+     width: 350;
+     text-align: left;
+     
+}
+
+tr{
+     border-style: solid;
+     border-color: white;
+     border-width: 0px;
+}
+
+tr.heading{
+     background-color: red;
+     border-style: solid;
+     font-weight: bold;
+     border-width: 1px;
+}
+
+tr#yellow{
+     background-color: yellow;
+}
+tr.ending{
+     background-color: #d0d0d0;
+     border-style: solid;
+     font-weight: bold;
+     border-width: 1px;
+}
+
+td#price{
+     font-weight: normal;
+     text-align: right;
+
+}
+*/

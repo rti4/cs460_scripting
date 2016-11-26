@@ -1,0 +1,118 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head><body><ol>
+<li> (<b>30 points</b>) This first problem will get you warmed up with the PHP SQL commands. Your answers may be placed in an
+     ascii text file. Assume that you have the following table structure:
+     <center>
+<b>Projects</b>
+<table border="1">
+<tbody><tr><th>Id</th><th>Name</th><th>Cost</th><th>Office_Id</th></tr>
+<tr><td>123</td><td>Claxton Renovation</td><td>105000</td><td>37996</td></tr>
+</tbody></table>
+<p>
+<b>Offices</b>
+<table border="1">
+<tbody><tr><th>Id</th><th>Office_Name</th><th>City</th><th>State</th><th>Street_Address</th><th>Phone_Number</th></tr>
+<tr><td>37996</td><td>UTK Computer Science</td><td>Knoxville</td><td>TN</td><td>1119 Volunteer Blvd</td><td>865-974-1000</td></tr>
+</tbody></table>
+</p><p>
+<b>EmployeeProjects</b>
+<table border="1">
+<tbody><tr><th>Employee_Id</th><th>Project_Id</th></tr>
+<tr><td>783</td><td>123</td></tr>
+<tr><td>783</td><td>875</td></tr>
+</tbody></table>
+</p><p>
+<b>EmployeeInfo</b>
+<table border="1">
+<tbody><tr><th>Id</th><th>Name</th><th>Email</th><th>Area_Code</th><th>Phone</th><th>Office_Id</th><th>salary</th></tr>
+<tr><td>783</td><td>Hercules</td><td>herc@buildit.com</td><td>423</td><td>789-1393</td><td>32030</td><td>25000</td></tr>
+</tbody></table>
+</p></center>
+You can create example tables to test your queries on by copying the script
+<b>/home/bvz/cs594/hw/hw11/createProjects.php</b> to your homework directory, editing
+the <tt>$database</tt>, <tt>$username</tt>, and <tt>$password</tt> strings, and
+then executing the script (remember to execute it on apophis.eecs.utk.edu or
+with a version of php that supports mysql). This script will recreate your 
+tables from hw10 because there are slight differences between the tables in that
+homework and the tables in this homework.
+     <p>
+     </p><ol>
+     <li> Write a php command to connect to an sql server located on foo.cs.utk.edu with username "barney" and
+          password "dinosaur".
+     </li><li> Write a php command to select a database named "autoparts".
+     </li><li> Write a php command to return all rows from the EmployeeProjects table.
+     </li><li> Write a php command to return the names and costs of all projects in the Projects table that
+          have a cost between $100,000 and $500,000.
+     </li><li> Write a php command to change the phone information for Hercules in the EmployeeInfo table from
+           423 and 789-1393 to 818 and 486-5868.
+     </li><li> Write a php command to delete employee 283 from the EmployeeInfo table.
+     </li><li> Write a php command to retrieve the names of all individuals working on project 123 who are assigned
+           to the Mt. Olympus office. 
+     </li></ol>
+<p>
+</p></li><li> (<b>30 points</b>) Write a php script named <b>avgcost.php</b> that computes and prints the average cost of a project in
+     the Projects table. The output should look something like:
+     <p>
+     Average project cost = $xxxxx.xx
+     </p><p>
+     The only important thing about the output is that it be restricted to two decimal digits.
+</p><p>
+</p></li><li> (<b>40 points</b>) This is a repeat of problem 2 from homework 10 except that you are going to
+use an SQL database rather than XML to implement the accounts file. 
+To review, here is the sample <a href="http://www.cs.utk.edu/%7Ebvz/cs460/hw/hw11/account.html">account management form</a>.
+Your task is to write a php script named <b>accountMgr.php</b> that implements the three operations shown
+on this form:
+<p>
+</p><ol>
+<li> Login: The php script should verify that the entered user id exists, 
+     then verify the password, and finally generate an html page with
+     the appropriate response. The possible responses are:
+     <p>
+     </p><ul>
+     <li> "Welcome xxxx!": <tt>xxxx</tt> should be the name associated with the
+          user id. For example, "Welcome Brad Vander Zanden!".
+     </li><li> "Invalid userid: xxxx": <tt>xxxx</tt> should be the invalid user id
+          entered by the user.
+     </li><li> "Invalid password"
+     </li></ul>
+<p>
+</p></li><li> Add Account: The script should verify that the user id does not already
+     exist in the account database and then add the user id, name, and 
+     password to the database. The script should generate an html page
+     with the following possible messages:
+     <p>
+     </p><ul>
+     <li> Account xxxx created--Welcome xxxx!: The first <tt>xxxx</tt> should
+          be replaced with the user id and the second <tt>xxxx</tt> should
+	  be replaced with the user's name.
+     <p>
+     </p></li><li> xxxx already exists--please select another user id: The <tt>xxxx</tt>
+          should be replaced with the duplicate user id.
+     </li></ul>
+<p>
+</p></li><li> Delete Account: The script should verify that the user id exists and
+     then delete the entry from the account database. The script should generate
+     an html page with the following possible messages:
+     <p>
+     </p><ul> 
+     <li> xxxx successfully deleted: <tt>xxxx</tt> should be the <i>name</i>
+          of the person, not the user id.
+     <p>
+     </p></li><li> xxxx not found: <tt>xxxx</tt> should be the invalid user id
+     </li></ul>
+</li></ol>
+<p>
+The problem requirements are as follows:
+</p><p>
+</p><ol>
+<li> You must use a mysql table to store the account information associated with
+each user. 
+</li><li> You need to design and create the table. 
+</li><li> You should use the mysql database that has been created for you to store
+     the table. 
+</li><li> Write a short php script named <b>createAccountTable.php</b> to create the table.
+</li><li> It is okay for the name to be kept as a single name (i.e., you do not need to break it into a last name and
+a first name).
+</li></ol>
+</li></ol>
+</body></html>

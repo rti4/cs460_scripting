@@ -1,0 +1,127 @@
+<html>
+<head>
+	<style type="text/css">
+	div.left{
+		/*background-color: red;*/
+		float: left;
+		height: 120px;
+		
+		
+	}
+	
+	div.city{
+		margin-top: 70px;
+		margin-bottom: 10px;
+		margin-left: 20px;
+	}
+	
+	div.income{
+		margin-left: 20px;
+		margin-top: 10px;
+	}
+	div.country{
+		margin-left: 20px;
+		margin-top: 10px;
+	}
+	div.right{
+		/*background-color: yellow;*/
+		float: right;
+	}
+	div.Amenities{
+		margin-right: 50px;
+	}
+	
+	div.right_menu{
+		float: right;
+		text-align: left;
+	}
+	div{
+		/*background-color: gray;*/
+	}
+	
+	div.vspace-15{
+		margin-top: 15px;
+	}
+	label{
+		font-weight: bold;
+	}
+
+	form{
+		width: 600px;
+	}
+	
+
+
+	</style>
+
+
+
+</head>
+<body>
+<form method="get" action="foo.php" >
+<fieldset>
+  <legend>Hotel Information</legend>
+	<div class="left">
+		
+		
+		
+		<div class="income"> Income: <select name="income" tabindex="1">
+		<option value="100-200">100000-200000</option>
+			<option value="200-500">200000-500000</option>
+			<option value="500-1000">50000-1000000</option>
+			<option value="1mil-10mil">1000000-10000000</option>
+			<option value="10mil+">10000000+</option>
+		</select>
+		</div>
+		<input type="hidden" name="Promotional Code" value="1A2B3C" />
+		<div class="city">City: <input type="text" name="City" size="10" maxlength="15" tabindex="2"/> State: 
+		<select name="state">
+			<option value="ky">Kentucky</option>
+			<option value="oh">Ohio</option>
+			<option value="tn">Tennessee</option>
+			<option value="wy">Wyoming</option>
+			
+		</select></div>
+	</div>
+	<div class="right_menu">
+		<div>Check-in Date: </div>
+		<div><input type="text" name="Check-in" size= "10" value="mm/dd/yyyy" tabindex="3"> </div>
+	
+		<div>Check-Out Date: </div>
+		<div><input type="text" name="Check-out" size= "10" value="mm/dd/yyyy" tabindex="4"> </div>
+		<div>Number of People: <input type="radio" name="1" checked="checked"/> 1 <input type="radio" name="2"/> 2 <input type="radio" name="3"/> 3
+	</div>
+</fieldset>  
+
+
+
+	<fieldset >
+		<legend>Room Information</legend>
+		<div class="left">
+			<div class=Amenities>
+			<label> Amenities </label>
+			 <div> <input type="checkbox" name="Amenities" value="internet" />internet</div>
+			 <div><input type="checkbox" name="Amenities" value="flat-screen tv" />flat-screen tv </div>
+			 <div><input type="checkbox" name="Amenities" value="spring water" />spring water</div>
+			 <div><input type="checkbox" name="Amenities" value="refrigerator" />refrigerator</div>
+			 </div>
+		</div>
+
+		<div class="left">  
+			<label>Room Type </label>
+			<div> <input type="radio" name="Room_Type" value="King"  /> King </div>
+			<div><input type="radio" name="Room_Type"  value=" Double" checked="checked" /> Double </div>
+			<div><input type="radio" name="Room_Type" value ="Suite" /> Suite </div>
+			<div class="vspace-15"><input type="checkbox" name="Room_Type" value="Smoking" />Smoking</div>
+		</div>
+	</fieldset>
+
+
+
+	<fieldset>
+		<legend>Special Needs</legend>
+		<textarea type="text" name="Special_Needs" tabindex="5" rows="5" cols="50">  </textarea>
+	</fieldset>
+</form>
+</body>
+</html>
